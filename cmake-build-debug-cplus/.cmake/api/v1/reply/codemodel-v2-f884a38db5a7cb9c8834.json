@@ -1,0 +1,232 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						6,
+						9,
+						12
+					]
+				},
+				{
+					"build" : "common",
+					"jsonFile" : "directory-common-Debug-6a5c22a1ee7f2aca6d8e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "common",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						7,
+						8,
+						10,
+						11
+					]
+				},
+				{
+					"build" : "exchange",
+					"jsonFile" : "directory-exchange-Debug-f8e4d7818f8b123ba459.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "exchange",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "trading",
+					"jsonFile" : "directory-trading-Debug-df444bb8e7d183bd6e85.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "trading",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "benchmarks",
+					"jsonFile" : "directory-benchmarks-Debug-f9c487a9ea6598b2a7ae.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "benchmarks"
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "LowLatencyApp",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "exchange_main::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-exchange_main-Debug-14f94ffae5586a5ee986.json",
+					"name" : "exchange_main",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hash_benchmark::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hash_benchmark-Debug-17a8883512668d36d826.json",
+					"name" : "hash_benchmark",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "lf_queue_example::@bfc844598bd03e848b3c",
+					"jsonFile" : "target-lf_queue_example-Debug-6d1a4e3dcb9ae5265417.json",
+					"name" : "lf_queue_example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "libcommon::@bfc844598bd03e848b3c",
+					"jsonFile" : "target-libcommon-Debug-c2c81f1201984e7770fc.json",
+					"name" : "libcommon",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "libexchange::@0e6322bdb95de66a55f7",
+					"jsonFile" : "target-libexchange-Debug-96e87c8eeec7dfe6d886.json",
+					"name" : "libexchange",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "libtrading::@efbb353c41a480a02cef",
+					"jsonFile" : "target-libtrading-Debug-c2019ef106a3b64a3a28.json",
+					"name" : "libtrading",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "logger_benchmark::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-logger_benchmark-Debug-8c63c7001f30bcdcbea7.json",
+					"name" : "logger_benchmark",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "logging_example::@bfc844598bd03e848b3c",
+					"jsonFile" : "target-logging_example-Debug-9f388abb253b907f8ba7.json",
+					"name" : "logging_example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "mem_pool_example::@bfc844598bd03e848b3c",
+					"jsonFile" : "target-mem_pool_example-Debug-24c6cab67b81d43788b5.json",
+					"name" : "mem_pool_example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "release_benchmark::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-release_benchmark-Debug-dccb844f9b535f7d1abf.json",
+					"name" : "release_benchmark",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "socket_example::@bfc844598bd03e848b3c",
+					"jsonFile" : "target-socket_example-Debug-5fddba7969c41b7db7c8.json",
+					"name" : "socket_example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "thread_example::@bfc844598bd03e848b3c",
+					"jsonFile" : "target-thread_example-Debug-3a46ec5dd1f36b8a0ed1.json",
+					"name" : "thread_example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trading_main::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trading_main-Debug-a55e22ec9a7116a8b0aa.json",
+					"name" : "trading_main",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/cplus/LDP/cmake-build-debug-cplus",
+		"source" : "/home/cplus/LDP"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
