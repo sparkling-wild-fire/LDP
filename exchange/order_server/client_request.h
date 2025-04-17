@@ -31,15 +31,15 @@ namespace Exchange {
 #pragma pack(push, 1)
 
   /// Client request structure used internally by the matching engine.
+  // 客户端请求
   struct MEClientRequest {
-    ClientRequestType type_ = ClientRequestType::INVALID;
-
-    ClientId client_id_ = ClientId_INVALID;
-    TickerId ticker_id_ = TickerId_INVALID;
-    OrderId order_id_ = OrderId_INVALID;
-    Side side_ = Side::INVALID;
-    Price price_ = Price_INVALID;
-    Qty qty_ = Qty_INVALID;
+    ClientRequestType type_ = ClientRequestType::INVALID;   // 请求类型，下达，撤单，成交
+    ClientId client_id_ = ClientId_INVALID;         // 请求客户端id
+    TickerId ticker_id_ = TickerId_INVALID;         // traceid
+    OrderId order_id_ = OrderId_INVALID;            // orderid
+    Side side_ = Side::INVALID;                     // 委托方向
+    Price price_ = Price_INVALID;                   // 价格
+    Qty qty_ = Qty_INVALID;                         // 数量
 
     auto toString() const {
       std::stringstream ss;
@@ -58,6 +58,7 @@ namespace Exchange {
   };
 
   /// Client request structure published over the network by the order gateway client.
+  // 带序号的客户端请求
   struct OMClientRequest {
     size_t seq_num_ = 0;
     MEClientRequest me_client_request_;
@@ -76,5 +77,6 @@ namespace Exchange {
 #pragma pack(pop) // Undo the packed binary structure directive moving forward.
 
   /// Lock free queues of matching engine client order request messages.
+  // 发送给交易所的请求队列
   typedef LFQueue<MEClientRequest> ClientRequestLFQueue;
 }

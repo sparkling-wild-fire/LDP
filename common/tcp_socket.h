@@ -5,6 +5,9 @@
 #include "socket_utils.h"
 #include "logging.h"
 
+/****
+ * 将套接字设置为非阻塞模式
+ */
 namespace Common {
   /// Size of our send and receive buffers in bytes.
   constexpr size_t TCPBufferSize = 64 * 1024 * 1024;

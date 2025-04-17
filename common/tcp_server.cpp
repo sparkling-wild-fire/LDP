@@ -24,7 +24,7 @@ namespace Common {
     auto recv = false;
 
     std::for_each(receive_sockets_.begin(), receive_sockets_.end(), [&recv](auto socket) {
-      recv |= socket->sendAndRecv();
+        recv |= socket->sendAndRecv();
     });
 
     if (recv) // There were some events and they have all been dispatched, inform listener.

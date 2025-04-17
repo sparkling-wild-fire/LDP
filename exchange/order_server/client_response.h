@@ -38,15 +38,15 @@ namespace Exchange {
 
   /// Client response structure used internally by the matching engine.
   struct MEClientResponse {
-    ClientResponseType type_ = ClientResponseType::INVALID;
-    ClientId client_id_ = ClientId_INVALID;
-    TickerId ticker_id_ = TickerId_INVALID;
-    OrderId client_order_id_ = OrderId_INVALID;
-    OrderId market_order_id_ = OrderId_INVALID;
-    Side side_ = Side::INVALID;
-    Price price_ = Price_INVALID;
-    Qty exec_qty_ = Qty_INVALID;
-    Qty leaves_qty_ = Qty_INVALID;
+    ClientResponseType type_ = ClientResponseType::INVALID;     // 成交,撤单，失败，撤废...
+    ClientId client_id_ = ClientId_INVALID;                     // 客户端id
+    TickerId ticker_id_ = TickerId_INVALID;                     // 这个万一没看见有啥用啊
+    OrderId client_order_id_ = OrderId_INVALID;                 // 委托号？
+    OrderId market_order_id_ = OrderId_INVALID;                 // 市场号
+    Side side_ = Side::INVALID;                                 // 委托方向
+    Price price_ = Price_INVALID;                               // 价格
+    Qty exec_qty_ = Qty_INVALID;                                // 成交数量？
+    Qty leaves_qty_ = Qty_INVALID;                              // 未成交数量？
 
     auto toString() const {
       std::stringstream ss;

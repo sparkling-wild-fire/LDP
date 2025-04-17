@@ -62,6 +62,7 @@ int main(int, char **) {
   order_server = new Exchange::OrderServer(&client_requests, &client_responses, order_gw_iface, order_gw_port);
   order_server->start();
 
+  // 那这不是浪费线程资源吗？
   while (true) {
     logger->log("%:% %() % Sleeping for a few milliseconds..\n", __FILE__, __LINE__, __FUNCTION__, Common::getCurrentTimeStr(&time_str));
     usleep(sleep_time * 1000);
