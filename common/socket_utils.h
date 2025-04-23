@@ -85,6 +85,8 @@ namespace Common {
   }
 
   /// Add / Join membership / subscription to the multicast stream specified and on the interface specified.
+  // 让指定的套接字加入到指定的多播组，以便接收发往该多播组的数据。通过 setsockopt 系统调用设置 IP_ADD_MEMBERSHIP 选项，
+  // 指定多播组 IP 和本地接口，从而完成加入多播组的操作。
   inline auto join(int fd, const std::string &ip) -> bool {
     const ip_mreq mreq{{inet_addr(ip.c_str())}, {htonl(INADDR_ANY)}};
     return (setsockopt(fd, IPPROTO_IP, IP_ADD_MEMBERSHIP, &mreq, sizeof(mreq)) != -1);

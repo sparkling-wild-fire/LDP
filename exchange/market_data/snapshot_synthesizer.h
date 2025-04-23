@@ -48,7 +48,7 @@ namespace Exchange {
 
   private:
     /// Lock free queue containing incremental market data updates coming in from the market data publisher.
-    MDPMarketUpdateLFQueue *snapshot_md_updates_ = nullptr;
+    MDPMarketUpdateLFQueue *snapshot_md_updates_ = nullptr;  // MarketDataPublisher用于向该组件发布增量MDPMarketDataUpdate消息的队列
 
     Logger logger_;
 
@@ -57,14 +57,16 @@ namespace Exchange {
     std::string time_str_;
 
     /// Multicast socket for the snapshot multicast stream.
-    McastSocket snapshot_socket_;
+    McastSocket snapshot_socket_;   // 向快照多播流发布快照市场数据更新。
 
     /// Hash map from TickerId -> Full limit order book snapshot containing information for every live order.
+    // 表示每个交易工具的订单簿快照
     std::array<std::array<MEMarketUpdate *, ME_MAX_ORDER_IDS>, ME_MAX_TICKERS> ticker_orders_;
-    size_t last_inc_seq_num_ = 0;
-    Nanos last_snapshot_time_ = 0;
+    size_t last_inc_seq_num_ = 0;       // 跟踪它接收到的最后一个增量MDPMarketUpdate消息的序列号
+    Nanos last_snapshot_time_ = 0;      // 上次通过UDP发布完整快照的时间，因为该组件只会定期发布所有订单簿的完整快照。
 
     /// Memory pool to manage MEMarketUpdate messages for the orders in the snapshot limit order books.
+    // 为啥弄这个
     MemPool<MEMarketUpdate> order_pool_;
   };
 }

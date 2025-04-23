@@ -13,6 +13,7 @@
 namespace Trading {
   class MarketDataConsumer {
   public:
+      // 分布式场景中不会重复吗
     MarketDataConsumer(Common::ClientId client_id, Exchange::MEMarketUpdateLFQueue *market_updates, const std::string &iface,
                        const std::string &snapshot_ip, int snapshot_port,
                        const std::string &incremental_ip, int incremental_port);
@@ -58,24 +59,25 @@ namespace Trading {
     Logger logger_;
 
     /// Multicast subscriber sockets for the incremental and market data streams.
-    Common::McastSocket incremental_mcast_socket_, snapshot_mcast_socket_;
+    Common::McastSocket incremental_mcast_socket_, snapshot_mcast_socket_;   // socket
 
     /// Tracks if we are currently in the process of recovering / synchronizing with the snapshot market data stream either because we just started up or we dropped a packet.
     bool in_recovery_ = false;
 
     /// Information for the snapshot multicast stream.
-    const std::string iface_, snapshot_ip_;
+    const std::string iface_, snapshot_ip_;   // iface_网络接口名称？
     const int snapshot_port_;
 
     /// Containers to queue up market data updates from the snapshot and incremental channels, queued up in order of increasing sequence numbers.
     typedef std::map<size_t, Exchange::MEMarketUpdate> QueuedMarketUpdates;
-    QueuedMarketUpdates snapshot_queued_msgs_, incremental_queued_msgs_;
+    QueuedMarketUpdates snapshot_queued_msgs_, incremental_queued_msgs_;    // 队列
 
   private:
     /// Main loop for this thread - reads and processes messages from the multicast sockets - the heavy lifting is in the recvCallback() and checkSnapshotSync() methods.
     auto run() noexcept -> void;
 
     /// Process a market data update, the consumer needs to use the socket parameter to figure out whether this came from the snapshot or the incremental stream.
+    // 当增量或快照多播套接字上有数据可用时，调用MarketDataConsumer::recvCallback()方法
     auto recvCallback(McastSocket *socket) noexcept -> void;
 
     /// Queue up a message in the *_queued_msgs_ containers, first parameter specifies if this update came from the snapshot or the incremental streams.
